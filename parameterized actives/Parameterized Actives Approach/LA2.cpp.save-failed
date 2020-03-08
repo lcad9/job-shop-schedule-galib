@@ -1,0 +1,2124 @@
+/******************************************************************************
+*   Researchers involved:													  *
+*   Fabio Henrique Pereira													  *
+*   Flavio Grassi															  *
+*   Marilda Fatima de Souza da Silva										  *
+*   																		  *
+*   Contributors:															  *
+*   Pedro Henrique Triguis													  *
+*   Valdemar Modolo Junior													  *
+*   Valmir Ferreira da Cruz													  *
+*   																		  *
+*   Affiliation:															  *
+*   Post-Graduation Program of Industrial Engineering, 						  *
+*   Universidade Nove de Julho, Sao Paulo, SP, Brazil.						  *
+*																			  *
+*   Short Description:														  *
+*   Program that uses Genetic Algorithms to find the optimal schedule 		  *
+*   sequence for a job shop environment (JSSP). 							  *
+*   It uses a develop methodology named "DSGA - Dynamic Seed Genetic 		  *
+*   Algorithm", and runs using GAlib - a Genetic Algorithm library developed  *
+*   in C++ by Matthew Wall, from the Massachusetts Institute of Technology.   *
+******************************************************************************/
+
+//Includes
+#include "fact_LA2.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <vector>
+#include <string>
+#include <cstring>
+#include <sstream>
+#include <fstream>
+#include <math.h>
+#include <algorithm>
+#include <queue>
+#include <iostream>
+#include <cstdlib>
+#include <set>
+#include <list>
+
+
+//#include <ga/ga.h>
+#include <ga/std_stream.h>
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <math.h>
+#include <ga/GASimpleGA.h>  // we're going to use the simple GA
+#include <ga/GA2DBinStrGenome.h> // and the 2D binary string genome
+#include <ga/GASStateGA.h> // and Steady State GA
+#include <ga/GARealGenome.h>
+#include <ga/GARealGenome.C>
+#include <windows.h>// for SHGetFolderPath function
+#include <shlobj.h>//for SHGetFolderPath function
+
+//Defines
+#define cout STD_COUT
+#define ostream STD_OSTREAM
+
+#define PRINT
+
+using namespace std;
+
+
+//User-defined function declarations
+int factivel(int *vPriorities, int *vSequences, int iPrioMode);
+void carregadados();
+void checkmachines(int timestep, int iter, int iPrioMode);
+void checkprocesses(int timestep, int iter, int iPrioMode);
+double geraVarNormal(double media, double desvio);
+float Objective(GAGenome &);
+vector<int> gera_sequencia(int rota[], int regra);
+void setup();
+void localSearch();
+void localSearch(const GAStatistics &);
+void cpBasedSeedGA();
+void findCriticalPath(vector<int> s);
+void  changeSeed(const GAStatistics &);
+vector<int> gera_seed_ga();
+void return_seed(vector<int> seed, GAGenome& g);
+float ObjectiveSeed(GAGenome& g);
+
+//void changeSeed(const GAStatistics &);
+string desktopFolder ();
+int projectDuration(vector<int> S);
+//Global variable declarations
+// JSSP 5x5 Mirshekarian (2016) Correlation of job-shop scheduling problem features.
+/*
+int R[MACHINE*JOB]= {3, 1, 2, 5, 4,
+                    3, 2, 1, 4, 5,
+                    3, 2, 5, 4, 1,
+                    5, 2, 3, 1, 4,
+                    5, 2, 3, 4, 1};
+
+int T[JOB*MACHINE]={96, 70, 6, 58, 86,
+                    37, 26, 23, 14, 34,
+                    21, 83, 29, 66, 25,
+                    18, 73, 28, 29, 89,
+                    87, 41, 32, 77, 77};
+
+// LA2
+int R[MACHINE*JOB]= {1,4,2,5,3,
+                    5,3,1,2,4,
+                    2,3,5,1,4,
+                    3,2,5,1,4,
+                    5,1,4,3,2,
+                    2,1,5,4,3,
+                    5,2,4,1,3,
+                    2,1,3,4,5,
+                    5,1,3,2,4,
+                    5,3,2,4,1};
+
+int T[JOB*MACHINE]={20, 87, 31, 76, 17,
+                    25, 32, 24, 18, 81,
+                    72, 23, 28, 58, 99,
+                    86, 76, 97, 45, 90,
+                    27, 42, 48, 17, 46,
+                    67, 98, 48, 27, 62,
+                    28, 12, 19, 80, 50,
+                    63, 94, 98, 50, 80,
+                    14, 75, 50, 41, 55,
+                    72, 18, 37, 79, 61};
+*/
+//
+// LA22
+int R[MACHINE*JOB]={10,6,5,3,8,4,2,1,9,7,
+                    4,3,5,2,10,1,7,6,8,9,
+                    9,8,3,1,10,6,7,4,2,5,
+                    4,3,7,5,8,9,6,10,1,2,
+                    5,7,2,3,8,1,9,6,4,10,
+                    7,1,5,4,8,9,2,6,3,10,
+                    4,10,7,6,1,9,5,3,8,2,
+                    5,2,9,1,8,7,6,4,10,3,
+                    10,2,5,4,9,3,7,1,8,6,
+                    4,3,7,10,8,1,5,6,2,9,
+                    2,5,1,3,10,7,8,9,6,4,
+                    2,4,1,3,10,8,9,5,7,6,
+                    6,4,7,2,1,8,9,10,3,5,
+                    2,1,8,5,4,6,10,9,7,3,
+                    5,9,3,4,2,7,8,10,6,1};
+
+int T[JOB*MACHINE]={66, 91, 87, 94, 21, 92, 7, 12, 11, 19,
+                    13, 20, 7, 14, 66,  75, 77, 16, 95, 7,
+                    77, 20, 34, 15, 88, 89, 53, 6, 45, 76,
+                    27, 74, 88, 62, 52, 69, 9, 98, 52, 88,
+                    88, 15, 52, 61, 54, 62, 59, 9, 90,  5,
+                    71, 41, 38, 53, 91, 68, 50, 78, 23,72,
+                    95, 36, 66, 52, 45, 30, 23, 25, 17, 6,
+                    65, 8, 85, 71, 65, 28, 88, 76, 27, 95,
+                    37, 37, 28, 51, 86, 9, 55, 73, 51, 90,
+                    39, 15, 83, 44, 53, 16, 46, 24, 25,82,
+                    72, 48, 87, 66, 5, 54, 39, 35, 95, 60,
+                    46, 20, 97, 21, 46, 37, 19, 59, 34, 55,
+                    23, 25, 78, 24, 28, 83, 28, 5, 73, 45,
+                    37, 53, 87, 38, 71, 29, 12, 33, 55, 12,
+                    90, 17, 49, 83, 40, 23, 65, 27, 7, 48};
+
+#define MIN_VALUE 0
+#define MAX_VALUE 100
+#define INC       5
+
+
+/////////////////////////////////////////////////////////////
+///Salva população inicial para testes dissertacao Valdemar
+/////////////////////////////////////////////////////////////
+string filePop = "PreDefinedIndividual."+(string)PROBLEMA+".txt";
+bool saveInitialPop=true;
+int POPSZ;
+int contPop = 0;
+/////////////////////////////////////////////////////////////
+//SALVA OS ARQUIVOS NO DESKTOP
+//string Con="\\Convergence.txt";
+//string Bsi="\\BestSequenceIdentified.txt";
+//string PastaDesktop=desktopFolder();
+//string ArqCon=PastaDesktop+Con;
+//string ArqBsi=PastaDesktop+Bsi;
+/////////////////////////////////////////////////////////////
+//SALVA OS ARQUIVOS NO PROPRIO DIRETORIO
+string ArqCon = "Results/Convergence."+(string)PROBLEMA+".txt";
+string ArqBsi = "Results/BestSequenceIdentified."+(string)PROBLEMA+".txt";
+/////////////////////////////////////////////////////////////
+int score_ant = ITER;
+bool primeira_geracao_s=true, primeira_geracao;
+int *s;
+double start = clock();
+int horas, minutos, segundos, horas_seg=3600;
+GAGenome g_temp;
+int cont;
+int nBestIndividuals = 1;
+int newBestIndividuals = 10;
+vector <int> score_rodada_anterior(nBestIndividuals);
+vector <int> bestSeedsIndex(nBestIndividuals);
+vector <int> scoreTopList(nBestIndividuals);
+std::vector<int>::iterator it;
+int bestCurrent = ITER;
+int firstBest = 0;
+int seedIndexCurrent = 0;
+//vector<int> firstSeed(s, s+MACHINE*JOB);
+vector <vector <int> > S(nBestIndividuals);//, vector<int>(MACHINE*JOB));
+int outIter;
+vector<int> currentCriticalPath;
+bool STOP = false;
+bool cpBasedSeed = false;
+////////// PROPORCAO DE FACTIVEIS  /////////////////
+int numberOfEvaluations = 0;
+int numberOfFactibles = 0;
+///////////// MATRIZ PARA CONTROLE DAS PERMUTAÇÕES ////////////
+vector<int> M(MACHINE*JOB);
+
+//User-defined function
+vector<int> firstJob2set(MACHINE);
+
+/******************************************************************************
+* 									Main Program							  *
+*******************************************************************************/
+
+int
+main(int argc, char **argv)
+{
+    cout << "New test for the scheduling problem "<<PROBLEMA<<"."<<endl;
+    cout << "It tries to found the optimal sequencing of the jobs.\n\n";
+    cout.flush();
+
+    remove(ArqCon.c_str());
+    remove(ArqBsi.c_str());
+
+    //////////////////////////////////////
+    // PEGA ARGUMENTOS
+    //////////////////////////////////////
+    for(int i=1;i<argc;i++)
+    {
+        firstJob2set[i-1] = atoi(argv[i]);
+        //cout << "firstJob2set[" << i << "] = " << firstJob2set[i-1] << endl;
+    }
+
+    numberOfFactibles = 0;
+	numberOfEvaluations = 0;
+
+    // DEFINE O CROMOSSO BINÁRIO: A LARGURA FOI DOBRADA. A PRIMEIRA METADE INDICA O JOB A SER PERMUTADO ...
+    // E A SEGUNDA INDICA COM QUEM DEVE PERMUTAR
+    int height  = MACHINE;
+
+    int width   = 2*JOB;
+
+    GA2DBinaryStringGenome genome(width, height, Objective);
+
+    GASteadyStateGA ga(genome);
+
+    ga.minimize();
+
+    POPSZ = 10;
+    ga.populationSize(POPSZ);
+    ga.pReplacement(0.9);
+    ga.nGenerations(100);
+    ga.pMutation(0.01);
+    ga.pCrossover(0.9);
+    ga.scoreFilename(ArqCon.c_str());
+    ga.scoreFrequency(1);
+    ga.selectScores(GAStatistics::Minimum);
+    ga.flushFrequency(1);
+
+    ga.nBestGenomes(newBestIndividuals);
+
+    ga.pConvergence(1);
+    ga.nConvergence((int)MACHINE*JOB);
+    ga.terminator(GAGeneticAlgorithm::TerminateUponConvergence);
+
+    int outIter = 1;
+
+    for(int i = 1; i <= outIter; i++)
+    {
+        primeira_geracao=true;
+
+        if(i == 1){
+            setup();
+        }
+        ga.initialize();
+        saveInitialPop = false;
+        //
+        while (!ga.done())
+        {
+            cout <<"\rRunning Iteraction " << i << " (of " << outIter <<
+            ") and Generation " << ga.generation()+2;
+            ++ga;
+            //
+
+        }
+        //Mudas a(s) Semente(s)
+        changeSeed(ga.statistics());
+
+        cout << "\nScore = " << bestCurrent << endl;
+    }
+
+    cout << "\n\nComplete!!! Please check the following files in your 'Results' FOLDER: \n\"BestSequenceIdentified.txt\"\n\"Convergence.txt\"\n\n"<<endl;
+
+    double end = clock();
+    double elapsed = ((double)(end-start))/CLOCKS_PER_SEC;
+//    elapsed *= -1;
+    horas = (elapsed/horas_seg);
+    minutos = (elapsed -(horas_seg*horas))/60;
+    segundos = (elapsed -(horas_seg*horas)-(minutos*60));
+    cout << "-->" << " Elapsed time (in seconds): " << elapsed << "s" << endl;
+    printf("--> Elapsed time (human readable): %dh:%dm:%ds",horas,minutos,segundos);
+
+    // PROPORÃ‡AO DE SOLUCOES FACTIVEIS
+    float prop = (float)numberOfFactibles/numberOfEvaluations;
+
+
+    ofstream fileOut;
+    fileOut.open(ArqBsi.c_str(), ios::app);
+    fileOut << "Tempo de processamento = "<<elapsed << "s [ "<<horas<<":"<<minutos<<":"<<segundos<<" ]"<<endl;
+    fileOut << "Problema testado = "<<PROBLEMA << " ("<<JOB<<" jobs x "<<MACHINE<<" máquinas)"<<endl;
+    fileOut << "\nParâmetros utilizados:"<< endl;
+    fileOut << "\tMakespan para indivíduos não-factíveis: "<< ITER << endl;
+    fileOut << "\tNúmero de laços externos: "<< outIter << endl;
+    fileOut << "\tNúmero de gerações: "<< ga.nGenerations()+1 << endl;
+    fileOut << "\tNúmero mínimo de gerações para convergência: "<< ga.nConvergence()<< endl;
+    fileOut << "\tTamanho da população: "<< ga.populationSize() << endl;
+    fileOut << "\tPercentual de substituição da população: "<< ga.pReplacement()*100 << "%"<<endl;
+    fileOut << "\tProbabilidade de cruzamento: "<< ga.pCrossover()*100 << "%"<<endl;
+    fileOut << "\tProbabilidade de mutação: "<< ga.pMutation()*100 << "%"<<endl;
+    fileOut << "\tNúmero de melhores indivíduos (para busca local): "<< ga.nBestGenomes() << endl;
+    fileOut << "\tProporção de soluções factiveis: " << prop * 100 << endl;
+    fileOut << "\tNúmero de soluções factiveis: " << numberOfFactibles << endl;
+    fileOut << "\tNúmero total de avaliações: " << numberOfEvaluations << endl;
+    fileOut.close();
+
+    //getchar();
+    return 0;
+}
+
+/******************************************************************************
+* 	Function: desktopFolder 												  *
+*	Short Description: Get the Path to the Current User's Desktop Folder. 	  *
+*******************************************************************************/
+
+string
+desktopFolder()
+{
+	char path[ MAX_PATH ];
+    	if (SHGetFolderPath( NULL, CSIDL_DESKTOPDIRECTORY, NULL, 0, path ) == S_OK)
+        	                     {
+            	                     return path;
+                	             }
+    return "Couldn't find the path to the Desktop folder!";
+}
+
+/******************************************************************************
+* 	Function: changeSeed													  *
+*	Short Description: Changes the seed of the next runs based on the best	  *
+*					   seed from the previous one.							  *
+*******************************************************************************/
+void
+changeSeed(const GAStatistics& g)
+{
+
+    cout << endl << "************* Muda a semente *********** " << endl;
+
+    // Estruturas temporarias para sementes
+    vector<int> SS;
+    //
+    // cout << "TopList " << n+1 << endl;
+    // Pega o n-esimo individuo da lista dos melhores
+    GA2DBinaryStringGenome & genome = (GA2DBinaryStringGenome &)g.bestIndividual();
+    //bestCurrent = ITER;
+    int P[MACHINE*JOB];
+    vector<int> score(nBestIndividuals);
+    //Permuta a semente em S com base no genoma 'genome'
+    // Copia S para uma estrutura temporaria que sofrerá permutação
+    SS = S[0];
+    ///////////////////////////////////////////////////////////
+    // DETERMINA VALOR DA NOVA POSIÇAO PARA INSERCAO
+    ///////////////////////////////////////////////////////////
+    vector<int> pos(MACHINE, 1);
+    for(int j=0; j<genome.height(); j++)
+    {
+        for(int i=JOB; i<2*JOB; i++)
+        {
+            pos[j] = pos[j] + genome.gene(i,j);
+        }
+    }
+    // REALIZA A INSERCÃO
+    for(int j=0; j<genome.height(); j++)
+    {
+        for(int i=0; i<JOB; i++)
+        {
+            if(genome.gene(i,j) == 1)
+            {
+                // nova posição do elemento da posicao i
+                int new_idx = (j*JOB)+(pos[j] % JOB);
+                int old_idx = (j*JOB)+i;
+                //
+                if(new_idx < old_idx)
+                {
+                    int val = SS[old_idx];
+                    for(int p=old_idx; p>new_idx;p--)
+                        SS[p] = SS[p-1];
+                    SS[new_idx] = val;
+                }
+                else if(new_idx > old_idx)
+                {
+                    int val = SS[old_idx];
+                    for(int p=old_idx; p<new_idx;p++)
+                        SS[p] = SS[p+1];
+                    SS[new_idx] = val;
+                }
+            }
+        }
+    }
+    //
+    // Atualiza a semente original S
+    S[0] = SS;
+    return;
+}
+
+/******************************************************************************
+* 	Function: gera_sequencia												  *
+*	Short Description: Generates the initial seed from the routes given by    *
+*					   the problem, based on FIFO dispatching rule.		  *
+*******************************************************************************/
+
+vector<int> gera_sequencia (int rota[], int regra)
+{
+    //
+    //static int s_temp[MACHINE*JOB];
+    vector<int> s_temp(MACHINE*JOB);
+    //
+    if(regra == 1){
+        /////////////////////////////////////////////////////
+        // PRIMEIRA FORMA DE GERAR SEQUENCIA BASEADA EM FIFO
+        /////////////////////////////////////////////////////
+        int i, j, aux1=0, aux2=0, conta_job=1;
+
+        while(conta_job<=MACHINE)
+        {
+            for(i=0; i<JOB; i++) //LINHAS DE R
+            {
+                if(rota[i*MACHINE+aux1]==conta_job)
+                {
+                    //////////////////////////////
+                    ///    Matriz M de steps   ///
+                    //////////////////////////////
+                    M[(conta_job-1)*JOB + i] = aux1 + 1;
+                    //
+                    //////////////////////////////
+                    s_temp[aux2]=i+1; //i indica a linha que indica o job
+                    aux2++;
+                    if(aux2%JOB==0)
+                    {
+                        conta_job++;
+                        aux1=0;
+                        break;
+                    }
+                }
+                if(i==JOB-1) aux1++; //muda para proxima coluna de R depois de percorrer todas as linhas
+            }
+        }
+    }
+    else if(regra == 2)
+    {
+        ///////////////////////////////////////////////////////////
+        // SEGUNDA FORMA DE GERAR SEQUENCIA BASEADA EM 3 FASES
+        ///////////////////////////////////////////////////////////
+        // vetor para a semente
+        vector< vector<int> > S(MACHINE);
+        // filas nas máquinas
+        vector< vector<int> > Queue(MACHINE);
+        // tempos de processamento
+        vector< vector<int> > processTime(MACHINE);
+        // eventos de fim de atividade (idle time)
+        vector<int> idleTime(MACHINE,0);
+        // vetor de próximas máquinas
+        vector<int> nextStation(JOB);
+        // vetor de eventos programados para máquinas
+        vector<int> numberOfEventsPerMachine(MACHINE, 0);
+        // vetor de passos do job
+        vector<int> step(JOB, 0);
+        // STATUS DAS MÁQUINAS
+        vector<bool> status(MACHINE, 0);
+        // Relógio de simulação
+        int t = 0;
+        // Lista de eventos futuros
+        list<int> futureEvents(1,0);
+        // Contador de operações escalonadas
+        int k=0;
+        // Arquivo saida debug
+        #ifdef PRINT
+            string ArqBsi = "Debug_gera_sequencia."+(string)PROBLEMA+".txt";
+            ofstream fileOut;
+            fileOut.open(ArqBsi.c_str(), ios::trunc);
+        #endif // PRINT
+        /// ================= IMPLEMENTACAO =============== ///
+        // INICIALIZAÇÃO
+        for(int i=0; i<JOB; i++)
+        {
+            // VERIFICA A MAQUINA DO STEP 0
+            int mq = R[i*MACHINE]-1;
+            // COLOCA O JOB NA FILA DA MAQ
+            Queue[mq].push_back(i);
+            // TEMPO
+            processTime[mq].push_back(T[i*MACHINE]);
+            // NEXT STATION
+            nextStation[i] = R[i*MACHINE+1]-1;
+            // NUMERO DE EVENTOS PROGRAMADOS EM CADA MAQUINA (fila ou previstos)
+            numberOfEventsPerMachine[mq]++;
+        }
+        //
+        #ifdef PRINT
+            fileOut << "Queue:" << endl;
+            for(int i=0;i<MACHINE; i++)
+            {
+                fileOut << "size: " << Queue[i].size() << endl;
+                for(int j=0; j<Queue[i].size();j++)
+                    fileOut << Queue[i][j] << ", ";
+                //
+                fileOut << endl;
+                //
+                for(int j=0; j<processTime[i].size();j++)
+                    fileOut << processTime[i][j] << "* ";
+                fileOut << endl;
+            }
+            fileOut << endl;
+        #endif // PRINT
+        //
+        // faz enquanto não escalona todos os jobs
+        while(k < MACHINE * JOB)
+        {
+
+            #ifdef PRINT
+                fileOut << "**** " << k << "****" << endl;
+                fileOut << "/////////////////////////////////////////////" << endl;
+                fileOut << "// FASE A: ajusta relogio para proximo evento" << endl;
+                fileOut << "/////////////////////////////////////////////" << endl;
+            #endif // PRINT
+
+            futureEvents.sort();
+            t = *futureEvents.begin();
+            //
+            #ifdef PRINT
+                //for (std::list<int>::iterator it=futureEvents.begin(); it != futureEvents.end(); ++it)
+                //    fileOut << ' ' << *it;
+                //fileOut << endl;
+                fileOut << ">>>> t = " << t << endl;
+            #endif // PRINT
+
+            // Remove primeiro elemento da lista de eventos futuros
+            std::list<int>::iterator iter = futureEvents.erase(futureEvents.begin());
+            // Em t=0 não há atividade em andamento que possa se encerrar na fase B
+            if(t > 0)
+            {
+                #ifdef PRINT
+                    fileOut << "///////////////////////////////////////////" << endl;
+                    fileOut << "// FASE B: finaliza atividades em andamento" << endl;
+                    fileOut << "///////////////////////////////////////////" << endl;
+                #endif // PRINT
+
+                // Encontra atividade
+                std::vector<int>::iterator it = find (idleTime.begin(), idleTime.end(), t);
+                //
+                #ifdef PRINT
+                    //fileOut << ">>>> t = " << t << endl;
+                    //for(int b=0;b<idleTime.size();b++)
+                    //    fileOut << idleTime[b] << ", ";
+                    //fileOut << endl;
+                #endif // PRINT
+                //
+                if(it != idleTime.end())
+                {
+                    // Identifica máquina a ser liberada
+                    int mq = it - idleTime.begin();
+                    // Libera a máquina
+                    status[mq] = 0;
+                    idleTime[mq] = 0;
+                    #ifdef PRINT
+                            fileOut << "liberou máquina: " << mq << endl;
+                            fileOut << "Tamanho da Fila: " << Queue[mq].size() << endl;
+                    #endif // PRINT
+                    // Identifica job
+                    int job = S[mq].back()-1; //S é 1-index
+                    // atualiza step do job
+                    step[job] = step[job]+1;
+                    //
+                    // Verifica se job tem um próximo passo
+                    if(step[job] < MACHINE)
+                    {
+                        //Pega máquina atual
+                        int currentStation = nextStation[job];
+                        // Coloca job na próxima fila já definida
+                        Queue[currentStation].push_back(job);
+                        // Tempo de atendimento do job da fila
+                        processTime[currentStation].push_back(T[job*MACHINE+step[job]]);
+                        //
+                        #ifdef PRINT
+                            fileOut << "Job " << job << " foi para maquina " << currentStation << endl;
+                            fileOut << "Tamanho da Fila: " << Queue[currentStation].size() << endl;
+                            fileOut << "Tempo  Process.: " << processTime[currentStation].back() << endl;
+                        #endif // PRINT
+                    }
+                    // Atualiza próxima máquina do job (se houver)
+                    if(step[job] < MACHINE-1){
+                        nextStation[job] = R[job*MACHINE+step[job]+1]-1;
+                        numberOfEventsPerMachine[nextStation[job]]++;
+                    }
+                    else if(step[job] == MACHINE){
+                        #ifdef PRINT
+                            fileOut << "Job " << job << " finalizado. Step " << step[job] << endl;
+                            nextStation[job] = -1;
+                        #endif // PRINT
+                    }
+                    //
+                }
+            }
+            #ifdef PRINT
+                fileOut << "/////////////////////////////////////////////////////" << endl;
+                fileOut << "// FASE C: inicia as atividades pela maior fila (AG?)" << endl;
+                fileOut << "/////////////////////////////////////////////////////" << endl;
+            #endif // PRINT
+            //
+            vector<int> numberInQueue;
+            for(int j=0; j<MACHINE; j++){
+                numberInQueue.push_back(Queue[j].size());
+            }
+            //
+            #ifdef PRINT
+                fileOut << "Tamanho das filas:" << endl;
+                for(int j=0; j<MACHINE; j++)
+                    fileOut << numberInQueue[j] << ", ";
+                fileOut << endl;
+                fileOut << "Status Máquinas:" << endl;
+                for(int j=0; j<MACHINE; j++)
+                    fileOut << status[j] << ", ";
+                fileOut << endl;
+            #endif // PRINT
+            //
+            for(int m=0; m<MACHINE; m++)
+            {
+                // Encontra maior elemento
+                std::vector<int>::iterator it = max_element(numberInQueue.begin(),numberInQueue.end());
+                // Posicao do maior elemento = máquina
+                int mq = it - numberInQueue.begin();
+                // Verifica se a maquina está livre
+                if(status[mq] == 0)
+                {
+                    // Número de elementos na maior fila
+                    int nf = *it;
+
+                    // Há fila?
+                    if(nf != 0)
+                    {
+                        #ifdef PRINT
+                            fileOut << ">>>>> Maquina com maior fila: " << mq << "<<<<<" << endl;
+                        #endif // PRINT
+
+                        // 'Zera' o tamanho da fila visitada (visita apenas uma vez)
+                        numberInQueue[mq] = 0;
+
+                        // Percorre a fila e decide quem vai ser atendido
+                        //(essa pode ser uma decisão do AG)
+                        vector<int> numberOfEvents;
+                        for(int n=0; n<nf; n++){
+                            if(nextStation[Queue[mq][n]] != -1)
+                                numberOfEvents.push_back(numberOfEventsPerMachine[nextStation[Queue[mq][n]]]);
+                            else
+                                numberOfEvents.push_back(0);
+                        }
+                        // Seleciona job com próxima estação com menor numero de eventos programados
+                        std::vector<int>::iterator itmin = min_element(numberOfEvents.begin(),numberOfEvents.end());
+                        std::vector<int>::iterator itmax = max_element(numberOfEvents.begin(),numberOfEvents.end());
+                        //
+                        // Iteradores auxiliares
+                        std::vector<int>::iterator it_time = processTime[mq].begin();
+                        std::vector<int>::iterator it;
+                        //
+                        int theJob;
+                        int pos;
+                        int time;
+                        if(*itmin != *itmax) // Há máquinas mais ocupadas que outras
+                        {
+                            // Posição do job
+                            pos = itmin - numberOfEvents.begin();
+                            //it = itmin;
+                            theJob = Queue[mq][pos];
+                            time = processTime[mq][pos];
+                            //
+                        }
+                        else // Máquinas igualmente ocupadas (atende pelo menor tempo)
+                        {
+                            // Posição do job com menor tempo
+                            it_time = min_element(processTime[mq].begin(),processTime[mq].end());
+                            //it = it_time;
+                            pos = it_time - processTime[mq].begin();
+                            theJob = Queue[mq][pos];
+                            time = processTime[mq][pos];
+                            //
+                        }
+                        // Inicia operacao do 'theJob' em mq
+                        k++;
+                        // Muda status
+                        status[mq] = 1;
+                        // Atualiza idleTime
+                        idleTime[mq] = t + time;
+                        // Cria evento chegada para proxima maquina do job
+                        if(nextStation[theJob] != -1)
+                            numberOfEventsPerMachine[nextStation[theJob]]++;
+                        // Retira um evento ma máquina atual
+                        if(numberOfEventsPerMachine[mq]>0)
+                            numberOfEventsPerMachine[mq]--;
+                        ////////////////////////////////////
+                        // Remove job da fila
+                        Queue[mq].erase(Queue[mq].begin()+pos);
+                        // Remove tempo
+                        processTime[mq].erase(processTime[mq].begin()+pos);
+                        //
+                        // Lista eventos futuros
+                        futureEvents.push_back(idleTime[mq]);
+                        // Coloca job na semente (1-index)
+                        S[mq].push_back(theJob+1);
+                        //
+                        #ifdef PRINT
+                            fileOut << "Programa Job " << theJob << " na Maquina " << mq << endl;
+                            fileOut << "Current step " << step[theJob] << " na maquina " << nextStation[theJob] << endl;
+                            fileOut << "Tempo processamento: " << time << endl;
+                            fileOut << "Evento futuro: " << futureEvents.back() << endl;
+                        #endif // PRINT
+                    }
+                    //
+                }//if m==0
+                else
+                    // 'Zera' o tamanho da fila visitada (visita apenas uma vez)
+                    numberInQueue[mq] = 0;
+            }
+        } // FECHA WHILE
+        //
+        for(int i=0;i<MACHINE;i++)
+        for(int j=0;j<JOB;j++){
+            s_temp[i*JOB+j] = S[i][j];
+            #ifdef PRINT
+                fileOut << S[i][j] << " ";
+            #endif // PRINT
+        }
+        #ifdef PRINT
+            fileOut << endl;
+        #endif // PRINT
+    }
+    else if(regra == 3){
+        /// /////////////////////////////////////////////////////////////////////////
+        cout << "// TERCEIRA FORMA DE GERAR SEQUENCIA BASEADA EM 3 FASES " << endl;
+        /// ************** USA AG PARA DETERMINAR O ATRASO OTIMO **************** ///
+        /// /////////////////////////////////////////////////////////////////////////
+        s_temp = gera_seed_ga();
+    }
+    //
+    return s_temp;
+}
+///////////////////////////////////////////////////
+// Aplica GA para gerar semente otimizando delay
+///////////////////////////////////////////////////
+void return_seed(vector<int> seed, GAGenome& g)
+{
+        GARealGenome& genome = (GARealGenome &)g;
+        /// /////////////////////////////////////////////////////////////////////////
+        cout << "// TERCEIRA FORMA DE GERAR SEQUENCIA BASEADA EM 3 FASES " << endl;
+        /// ************** USA AG PARA DETERMINAR O ATRASO OTIMO **************** ///
+        /// /////////////////////////////////////////////////////////////////////////
+        // vetor para a semente
+        vector< vector<int> > S(MACHINE);
+        // filas nas máquinas
+        vector< vector<int> > Queue(MACHINE);
+        // tempos de processamento
+        vector< vector<int> > processTime(MACHINE);
+        // eventos de fim de atividade (idle time)
+        vector<int> idleTime(MACHINE,0);
+        // contador de alocacao das maquinas
+        vector<int> seized(MACHINE,0);
+        // vetor de próximas máquinas
+        vector<int> nextStation(JOB);
+        // vetor de eventos programados para máquinas
+        vector<int> numberOfEventsPerMachine(MACHINE, 0);
+        // vetor de passos do job
+        vector<int> step(JOB, 0);
+        // STATUS DAS MÁQUINAS
+        vector<int> status(MACHINE, 0);
+        // Relógio de simulação
+        int t = 0;
+        // Lista de eventos futuros
+        list<int> futureEvents(1,0);
+        // Contador de operações escalonadas
+        int k=0;
+        //
+        float fitness = 0;
+        int theJob;
+        int time;
+        // Arquivo saida debug
+        #ifdef PRINT
+            string ArqBsi = "Debug_sequencia_G3."+(string)PROBLEMA+".txt";
+            ofstream fileOut;
+            fileOut.open(ArqBsi.c_str(), ios::app);
+        #endif // PRINT
+        /// ================= IMPLEMENTACAO =============== ///
+        // INICIALIZAÇÃO
+        for(int i=0; i<JOB; i++)
+        {
+            // VERIFICA A MAQUINA DO STEP 0
+            int mq = R[i*MACHINE]-1;
+            // COLOCA O JOB NA FILA DA MAQ
+            Queue[mq].push_back(i);
+            // TEMPO
+            processTime[mq].push_back(T[i*MACHINE]);
+            // NEXT STATION
+            nextStation[i] = R[i*MACHINE+1]-1;
+            // NUMERO DE EVENTOS PROGRAMADOS EM CADA MAQUINA (fila ou previstos)
+            numberOfEventsPerMachine[mq]++;
+            // ATUALIZA IDLE TIME COM O ATRASO
+            float delay = genome.gene(mq*JOB+seized[mq]);
+            idleTime[mq] = delay;
+            //
+            fitness = delay;
+        }
+        // ATUALIZA Lista eventos futuros e STATUS
+        for(int mq=0;mq<MACHINE;mq++){
+            if(idleTime[mq] != 0){
+                futureEvents.push_back(idleTime[mq]);
+                // ATUALIZA status da maquina mq
+                status[mq] = 2;
+                //
+                cout << futureEvents.back() << endl;
+            }
+        }
+        //
+        //
+        // faz enquanto não escalonar todos os jobs
+        while(k < MACHINE * JOB)
+        {
+            /// ///////////////////
+            /// // FASE A      ////
+            /// ///////////////////
+            futureEvents.sort();
+            t = *futureEvents.begin();
+            //
+            // Remove primeiro elemento da lista de eventos futuros
+            std::list<int>::iterator iter = futureEvents.erase(futureEvents.begin());
+            // Em t=0 não há atividade em andamento que possa se encerrar na fase B
+            if(t > 0)
+            {
+                /// ///////////////////
+                /// // FASE B      ////
+                /// ///////////////////
+                // Encontra atividade
+                std::vector<int>::iterator it = find (idleTime.begin(), idleTime.end(), t);
+                //
+                if(it != idleTime.end())
+                {
+                    // Identifica máquina a ser liberada (do atendimento ou da espera)
+                    int mq = it - idleTime.begin();
+                    // Guarda status antigo (1=MÁQUINA OCUPADA; 2=MÁQUINA EM ESPERA)
+                    int oldStatus = status[mq];
+                    ////////////////////////////////////////////////////////////////
+                    // Verifica se a máquina estava em atendimento
+                    if(oldStatus == 1){
+                        // Identifica job
+                        int job = S[mq].back()-1; //S é 1-index
+                        // atualiza step do job
+                        step[job] = step[job]+1;
+                        //
+                        // VERIFICA DELAY E COLOCA MÁQUINA EM ESPERA
+                        status[mq] = 2;
+                        float delay = genome.gene(mq*JOB+seized[mq]);
+                        idleTime[mq] = t + delay;
+                        //
+                        // Verifica se job tem um próximo passo
+                        if(step[job] < MACHINE)
+                        {
+                            //Pega máquina atual
+                            int currentStation = nextStation[job];
+                            // Coloca job na próxima fila já definida
+                            Queue[currentStation].push_back(job);
+                            // Tempo de atendimento do job da fila
+                            processTime[currentStation].push_back(T[job*MACHINE+step[job]]);
+                            //
+                        }
+                        // Atualiza próxima máquina do job (se houver)
+                        if(step[job] < MACHINE-1){
+                            nextStation[job] = R[job*MACHINE+step[job]+1]-1;
+                            numberOfEventsPerMachine[nextStation[job]]++;
+                        }
+                    }
+                    else{
+                        /////////////////////////
+                        // Libera a máquina
+                        status[mq] = 0;
+                        idleTime[mq] = 0;
+                        /////////////////////////
+                    }
+                } // if(it != idleTime.end())
+            } //if(t>0)
+            //
+            /// /////////////////////////////////////////////////////
+            /// // FASE C: inicia as atividades por maquina      ////
+            /// /////////////////////////////////////////////////////
+            vector<int> numberInQueue;
+            for(int j=0; j<MACHINE; j++){
+                numberInQueue.push_back(Queue[j].size());
+            }
+            // Percorre as filas das maquinas
+            for(int m=0; m<MACHINE; m++)
+            {
+                // Máquina
+                int mq = m;
+                // Verifica se a maquina está livre
+                if(status[mq] == 0)
+                {
+                    // Número de elementos na fila
+                    int nf = numberInQueue[mq];
+
+                    // Há fila?
+                    if(nf != 0)
+                    {
+                        // 'Zera' o tamanho da fila visitada (visita apenas uma vez)
+                        numberInQueue[mq] = 0;
+                        //
+                        // Atende na base LIFO
+                        time = processTime[mq].back();
+                        theJob = Queue[mq].back();
+                        //
+                    }
+                        // Inicia operacao do 'theJob' em mq
+                        k++;
+                        // Muda status
+                        status[mq] = 1;
+                        // Atualiza idleTime
+                        idleTime[mq] = t + time;
+                        // Atualiza makespan
+                        if(idleTime[mq] > fitness)
+                            fitness = idleTime[mq];
+                        //
+                        seized[mq] = seized[mq]+1;
+                        // Cria evento chegada para proxima maquina do job
+                        if(nextStation[theJob] != -1)
+                            numberOfEventsPerMachine[nextStation[theJob]]++;
+                        // Retira um evento ma máquina atual
+                        if(numberOfEventsPerMachine[mq]>0)
+                            numberOfEventsPerMachine[mq]--;
+                        ////////////////////////////////////
+                        // Remove job da fila
+                        //Queue[mq].erase(Queue[mq].begin()+pos);
+                        Queue[mq].pop_back();
+                        // Remove tempo
+                        //processTime[mq].erase(processTime[mq].begin()+pos);
+                        processTime[mq].pop_back();
+                        //
+                        // Lista eventos futuros
+                        futureEvents.push_back(idleTime[mq]);
+                        // Coloca job na semente (1-index)
+                        S[mq].push_back(theJob+1);
+                        //
+                    }
+                    //
+                }//if m==0
+                //else
+                    // 'Zera' o tamanho da fila visitada (visita apenas uma vez)
+                    //numberInQueue[mq] = 0;
+            }// FECHA WHILE
+        //
+        for(int i=0;i<MACHINE;i++)
+        for(int j=0;j<JOB;j++){
+            seed[i*JOB+j] = S[i][j];
+        }
+        ////////////////////////////////
+}
+//////////////////////////////////////////////////////////
+// otimiza o atraso com o AG
+//////////////////////////////////////////////////////////
+vector<int> gera_seed_ga()
+{
+    cout << "Entrou em gera seed" << endl;
+    // getchar();
+    //
+    GARealAlleleSet alleles(MIN_VALUE, MAX_VALUE);
+    GARealGenome genome(MACHINE*JOB, alleles, ObjectiveSeed);
+
+    GASimpleGA ga(genome);
+    ga.minimize();		// by default we want to minimize the objective
+    ga.populationSize(50);	// how many individuals in the population
+    ga.nGenerations(25);		// number of generations to evolve
+    ga.pMutation(0.001);		// likelihood of mutating new offspring
+    ga.pCrossover(0.9);		// likelihood of crossing over parents
+    ga.scoreFilename("bog.dat");	// name of file for scores
+    ga.scoreFrequency(1);		// keep the scores of every generation
+    ga.flushFrequency(10);	// specify how often to write the score to disk
+    ga.selectScores(GAStatistics::AllScores);
+
+    ga.initialize();
+
+    while(!ga.done()) ga.step();
+
+    cout << "Finalizou AG em gera seed" << endl;
+    getchar();
+
+    // Semente
+    vector<int> s_temp(MACHINE*JOB);
+
+    genome = ga.statistics().bestIndividual();
+
+    /////////////////////////////////////
+    // IMPRIME SOLUÇAO ENCONTRADA
+    cout << "Atrasos:" << endl;
+    for(int i=0; i<MACHINE*JOB; i++)
+        cout << s_temp[i] << " ";
+
+    cout << endl;
+    /////////////////////////////////////
+    getchar();
+
+    return_seed(s_temp, genome);
+
+    return s_temp;
+}
+
+
+////////////////////////////////////////////////////////////////////
+// Faz setup da semente na primeira geração de todo o processo
+////////////////////////////////////////////////////////////////////
+void setup()
+{
+ //       cout << "Entrou em setup" << endl;
+ //       getchar();
+
+        //Gera um vector com uma semente
+        ////////////////////////////////////////////////
+        S[0] = gera_sequencia(R, 3);
+        ////////////////////////////////////////////////
+
+        // Calcula Caminho Critico
+        //findCriticalPath(S[0]);
+
+        //Faz busca local na semente inicial e atualiza S[0]
+        bestCurrent = ITER;
+
+        //localSearch();
+
+        /////////////////////////////////////////////////////////////////////////////
+        ///   I N T E R P R E T A C A O   O R I G I N A L   D A   S E M E N T E   ///
+        /////////////////////////////////////////////////////////////////////////////
+        //avalia a semente e atualiza valor de aptidão em scoreTopList
+        int P[MACHINE*JOB];
+
+        int maq = -1;
+        for(int i=0; i<MACHINE*JOB; i++)
+        {
+            int job = S[0][i] - 1; // Semente S[0] é 1-index; job 0-index
+            int pos = (i%JOB) + 1;
+            if(pos == 1) maq++;
+
+            // Valores em P são 1-index
+            P[maq*JOB + job] = pos;
+        }
+        // Calcula aptidao da semente
+        int score = factivel(P,R,1);
+
+        ///////////////////////////////////////////
+        ///       COMPUTA      FACTIVEIS        ///
+        ///////////////////////////////////////////
+        numberOfEvaluations++;
+        if(score < ITER) numberOfFactibles++;
+        ///////////////////////////////////////////
+
+        bestCurrent = score;
+        firstBest = score;
+        // Inicialmente, todos os  valores são iguais
+        for (int num = 0; num < nBestIndividuals; num++)
+            scoreTopList[num] = score;
+
+        cout << endl << "score: " << bestCurrent << endl;
+}
+//
+//*****************************************************************************
+// calculate the makespan based on the critical path method
+int projectDuration(vector<int> Seed)
+{
+    //
+    int *p;
+    vector<int> startVec;
+    vector<int> endVec;
+    vector<int> timeVec;
+
+    // Cria arestas do grafo
+    for(int j=0; j<JOB; j++)
+    {
+            startVec.push_back(0);
+            timeVec.push_back(0);
+
+            for(int m=1; m<=MACHINE; m++)
+            {
+                    //
+                    endVec.push_back(j*MACHINE+m); //1-index
+                    startVec.push_back(j*MACHINE+m); //1-index
+                    timeVec.push_back(T[j*MACHINE+m-1]); //0-index
+            }
+            endVec.push_back(JOB*MACHINE+1);
+    }
+    //
+    for(int m=0; m<MACHINE; m++)
+    {
+            for(int j=0; j<JOB; j++)
+            {
+                    int job = Seed[m*JOB+j] - 1;
+                    // Vai na 'linha' de R referente ao job
+                    int start = job * MACHINE;
+                    int end = job * MACHINE + MACHINE - 1;
+                    p = std::find(R+start,R+end, m+1);
+
+                    //Posicao
+                    int pos = p - (R+start);
+                    int no = job*MACHINE + pos + 1;
+                    //
+                    // Coloca na lista de arestas
+                    if(j == 0)
+                    {
+                         //seta apenas como nó inicial
+                         startVec.push_back(no); //1-index
+                         timeVec.push_back(T[no-1]); //0-index
+                    }
+                    if(j == JOB-1)
+                    {
+                         //seta apenas como nó final
+                         endVec.push_back(no); //1-index
+                    }
+                    if(j != 0 && j != JOB-1)
+                    {
+                        //seta como inicial e final
+                        startVec.push_back(no); //1-index
+                        endVec.push_back(no); //1-index
+                        timeVec.push_back(T[no-1]); //0-index
+                    }
+            }
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    int numberVertex = MACHINE*JOB + 2;   // number  of vertex
+    int numberActivities = endVec.size(); // number of edges
+    int i, j;
+
+    /*vertices are of the form (v, u) */
+    //indegree of each vertex (that is, count the number of edges entering them)
+    vector<int> indegree(numberVertex, 0);
+
+    std::vector<int> v(startVec);
+    std::vector<int> u(endVec);
+    std::vector<int> d(timeVec);
+
+    int project_duration=0;//project duration
+
+
+    /*# Compute the indegree for each vertex v from the graph:
+    for each neighbor u of v: indegree[u] += 1*/
+    for (j=0; j<numberActivities; j++){
+        indegree[u[j]]++;
+    }
+
+    queue<int> Q; //queue Q = empty queue
+    int distance [numberVertex];
+    memset(distance, 0, sizeof(int) * numberVertex);//distance = array filled with zeroes
+
+    //vetor de conjuntos de nos
+    vector< set<int> > vecSetCriticalPath(numberVertex);
+
+    //for each vertex v:
+    //if indegree[v] = 0:
+    //insert v on Q
+    for (j=0; j<numberVertex; j++)
+    {
+        if (indegree[j]==0)
+            Q.push(v[j]);
+    }
+
+    int first;
+
+    //printf ("first in the queue=%d\n", Q.front());
+
+    /*for each neighbor u of v:
+    d istance[u] = max(distance[u], distance[v] + time(v, u))
+    indegree[u] -= 1
+    if indegree[u] = 0:
+    insert u on Q
+    */
+    while (!Q.empty()){ //while Q is not empty:
+
+     first= Q.front();  //v = get front element from Q
+     Q.pop(); //delete de first from queue
+
+     //Para todo vizinho de first faca
+     for(int i = 0;i < numberActivities;i++) //**********MELHORAR ESSA ESTRUTURA **********
+     {
+        if(v[i] == first) //
+        {
+                //////////////////////////////////////////////////////////////
+                //
+                distance[u[i]]=std::max(distance[u[i]], distance[v[i]]+ d[i]);
+                indegree[u[i]]-=1;
+                ////////////////////////////////////////////////////////////////
+
+                if (indegree[u[i]]==0){
+                   Q.push(u[i]);
+                }
+        }
+     }
+   }//fecha while
+
+    /*Now, select the vertex x with the largest distance.
+    This is the minimum total project_duration.*/
+    project_duration = *std::max_element(distance,distance+numberVertex);
+    return project_duration;
+}
+/******************************************************************************
+* void findCriticalPath
+*******************************************************************************/
+void findCriticalPath(vector<int> s)
+{
+    //
+    int *p;
+    vector<int> startVec;
+    vector<int> endVec;
+    vector<int> timeVec;
+
+    // Cria arestas do grafo
+    for(int j=0; j<JOB; j++)
+    {
+            startVec.push_back(0);
+            timeVec.push_back(0);
+
+            for(int m=1; m<=MACHINE; m++)
+            {
+                    //
+                    endVec.push_back(j*MACHINE+m); //1-index
+                    startVec.push_back(j*MACHINE+m); //1-index
+                    timeVec.push_back(T[j*MACHINE+m-1]); //0-index
+            }
+            endVec.push_back(JOB*MACHINE+1);
+    }
+    //
+//    for(int j=0; j<endVec.size(); j++)
+//    {
+//            cout << startVec[j] << "  " << endVec[j] << "  " << timeVec[j] << endl;
+//    }
+//    getchar();
+    //
+    for(int m=0; m<MACHINE; m++)
+    {
+            for(int j=0; j<JOB; j++)
+            {
+                    int job = s[m*JOB+j] - 1;
+                    // cout << "Job: " << job+1 << endl;
+                    // Vai na 'linha' de R referente ao job
+                    int start = job * MACHINE;
+                    int end = job * MACHINE + MACHINE - 1;
+                    //cout << "start = " << start << " end = " << end << endl;
+                    p = std::find(R+start,R+end, m+1);
+
+                    //cout << "Maq: " << m+1 << endl;
+                    //Posicao
+                    int pos = p - (R+start);
+                    //cout << "Operacao: " << pos+1 << endl;
+                    int no = job*MACHINE + pos + 1;
+                    //cout << endl << "****No***** " << no << endl;
+                    //
+                    // Coloca na lista de arestas
+                    if(j == 0)
+                    {
+                         //seta apenas como nó inicial
+                         startVec.push_back(no); //1-index
+                         timeVec.push_back(T[no-1]); //0-index
+                    }
+                    if(j == JOB-1)
+                    {
+                         //seta apenas como nó final
+                         endVec.push_back(no); //1-index
+                    }
+                    if(j != 0 && j != JOB-1)
+                    {
+                        //seta como inicial e final
+                        startVec.push_back(no); //1-index
+                        endVec.push_back(no); //1-index
+                        timeVec.push_back(T[no-1]); //0-index
+                    }
+            }
+//            //
+    }
+//    getchar();
+//    for(int j=0; j<endVec.size(); j++)
+//    {
+//            cout << startVec[j] << "  " << endVec[j] << "  " << timeVec[j] << "  " << endVec.size() << endl;
+//    }
+//
+//    getchar();
+
+
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    int numberVertex = MACHINE*JOB + 2;   // number  of vertex
+    int numberActivities = endVec.size(); // number of edges
+    int i, j;
+
+    /*vertices are of the form (v, u) */
+    //indegree of each vertex (that is, count the number of edges entering them)
+    vector<int> indegree(numberVertex, 0);
+
+    std::vector<int> v(startVec);
+    std::vector<int> u(endVec);
+    std::vector<int> d(timeVec);
+
+//    for (j=0;j<numberActivities; j++)
+//        cout << "***** " << v[j] << "  " << u[j] << "  " << d[j] << endl;
+//    getchar();
+
+    int project_duration=0;//project duration
+
+
+    /*# Compute the indegree for each vertex v from the graph:
+    for each neighbor u of v: indegree[u] += 1*/
+    for (j=0; j<numberActivities; j++){
+        indegree[u[j]]++;
+    }
+
+//    for (j=0;j<numberVertex; j++)
+//        printf ("indegree %d= %d\n",j,indegree[j] );
+//getchar();
+
+    queue<int> Q; //queue Q = empty queue
+    int distance [numberVertex];
+    memset(distance, 0, sizeof(int) * numberVertex);//distance = array filled with zeroes
+
+    //vetor de conjuntos de nos
+    vector< set<int> > vecSetCriticalPath(numberVertex);
+
+    //for each vertex v:
+    //if indegree[v] = 0:
+    //insert v on Q
+    for (j=0; j<numberVertex; j++)
+    {
+        if (indegree[j]==0)
+            Q.push(v[j]);
+    }
+
+    int first;
+
+    //printf ("first in the queue=%d\n", Q.front());
+
+    /*for each neighbor u of v:
+    d istance[u] = max(distance[u], distance[v] + time(v, u))
+    indegree[u] -= 1
+    if indegree[u] = 0:
+    insert u on Q
+    */
+    while (!Q.empty()){ //while Q is not empty:
+
+     first= Q.front();  //v = get front element from Q
+     Q.pop(); //delete de first from queue
+
+     //Para todo vizinho de first faca
+     for(int i = 0;i < numberActivities;i++) //**********MELHORAR ESSA ESTRUTURA **********
+     {
+        if(v[i] == first) //
+        {
+                //////////////////////////////////////////////////////////////
+                //
+                distance[u[i]]=std::max(distance[u[i]], distance[v[i]]+ d[i]);
+                indegree[u[i]]-=1;
+                ////////////////////////////////////////////////////////////////
+
+                if (indegree[u[i]]==0){
+                   Q.push(u[i]);
+                }
+        }
+     }
+     ////////////////////////////////////////////
+     //
+     //for(int ii=0; ii<numberVertex; ii++)
+     //cout << *std::max_element(distance,distance+numberVertex) << endl;
+     //getchar();
+     ////////////////////////////////////////////
+   }//fecha while
+
+
+    /*Now, select the vertex x with the largest distance.
+    This is the minimum total project_duration.*/
+    project_duration = *std::max_element(distance,distance+numberVertex);
+    //printf ("Total Project Duration %d\n", project_duration);
+    //getchar();
+    ////////////////////////////////////////////////////////////////////////////
+    // Pega posicao do elemento máximo = primeiro na 'lista critica'
+    int criticalNode = std::find(distance, distance+numberVertex, project_duration) - distance;
+    vector<int> criticalPath;
+    //criticalPath.push_back(criticalNode);
+    ////////////////////////////////////////////////////////////////////////////
+    while(criticalNode != 0){
+        vector<int> neighborhood;
+        vector<int> neighDistances;
+        //
+        // varre recursivamente os vizinhos e pega o máximo
+        for(int i = 0;i < numberActivities;i++) //**********MELHORAR ESSA ESTRUTURA **********
+        {
+                if(u[i] == criticalNode)
+                {
+                        neighborhood.push_back(v[i]);
+                        neighDistances.push_back(distance[v[i]]);
+                        //cout << v[i] << " " << distance[v[i]] << endl;
+                        //getchar();
+                }
+        }
+        int max = *std::max_element(neighDistances.begin(),neighDistances.end());
+        int pp =  std::find(neighDistances.begin(), neighDistances.end(), max) - neighDistances.begin();
+        if(max == 0) pp = neighDistances.size() - 1;
+        criticalNode = neighborhood[pp];
+        criticalPath.push_back(criticalNode);
+        //cout << "criticalNode = " << criticalNode << "Max: " << max << endl;
+    }
+    //getchar();
+    ////////////////////////////////////////////////////////////////////////////
+//    cout << "criticalPath: " << endl;
+//    for (int j=0; j<criticalPath.size(); j++)
+//        cout << criticalPath[j] << endl;
+//
+//    cout << '\n';
+
+        currentCriticalPath = criticalPath;
+
+//    system("PAUSE");
+
+    return;
+}
+//
+//////////////////////////////////////////////////////////////////////
+// Funcao objetivo do problema de otimização continuo para encontrar
+// o sequenciamento com atraso otimo
+//////////////////////////////////////////////////////////////////////
+float ObjectiveSeed(GAGenome& g)
+{
+        //
+        GARealGenome& genome = (GARealGenome &)g;
+        /// /////////////////////////////////////////////////////////////////////////
+        cout << "************** USA AG PARA DETERMINAR O ATRASO OTIMO ******" << endl;
+        /// /////////////////////////////////////////////////////////////////////////
+        // vetor para a semente
+        vector< vector<int> > S(MACHINE);
+        // filas nas máquinas
+        vector< vector<int> > Queue(MACHINE);
+        // tempos de processamento
+        vector< vector<int> > processTime(MACHINE);
+        // eventos de fim de atividade (idle time)
+        vector<int> idleTime(MACHINE,0);
+        // contador de alocacao das maquinas
+        vector<int> seized(MACHINE,0);
+        // vetor de próximas máquinas
+        vector<int> nextStation(JOB);
+        // vetor de eventos programados para máquinas
+        vector<int> numberOfEventsPerMachine(MACHINE, 0);
+        // vetor de passos do job
+        vector<int> step(JOB, 0);
+        // STATUS DAS MÁQUINAS
+        vector<int> status(MACHINE, 0);
+        // Relógio de simulação
+        int t = 0;
+        // Lista de eventos futuros
+        list<int> futureEvents(1,0);
+        // Contador de operações escalonadas
+        int k=0;
+        //
+        float fitness = 0;
+        //
+        int theJob;
+        int time;
+        /// ================= IMPLEMENTACAO =============== ///
+        // INICIALIZAÇÃO
+        for(int i=0; i<JOB; i++)
+        {
+            // VERIFICA A MAQUINA DO STEP 0
+            int mq = R[i*MACHINE]-1;
+            // COLOCA O JOB NA FILA DA MAQ
+            Queue[mq].push_back(i);
+            // TEMPO
+            processTime[mq].push_back(T[i*MACHINE]);
+            // NEXT STATION
+            nextStation[i] = R[i*MACHINE+1]-1;
+            //
+        }
+        // ATUALIZA IDLE TIME, Lista eventos futuros e STATUS COM O ATRASO
+        for(int mq=0;mq<MACHINE;mq++){
+            float delay = genome.gene(mq*JOB+seized[mq]);
+            idleTime[mq] = delay;
+            //
+            futureEvents.push_back(idleTime[mq]);
+            // ATUALIZA status da maquina mq
+            status[mq] = 2;
+            //
+            fitness = delay;
+            //
+            // cout << "t " << futureEvents.back() << "status " << status[mq] << endl;
+        }
+        //
+        // faz enquanto não escalonar todos os jobs
+        while(k < MACHINE * JOB)
+        {
+            getchar();
+            /// ///////////////////
+            /// // FASE A      ////
+            /// ///////////////////
+            ///
+            cout << "Fase A" << endl;
+            ///
+            futureEvents.sort();
+            t = *futureEvents.begin();
+            //
+            // Remove primeiro elemento da lista de eventos futuros
+            std::list<int>::iterator iter = futureEvents.erase(futureEvents.begin());
+
+            cout << "****************" << endl;
+            cout << "*** TNOW = " << t << endl;
+            cout << "****************" << endl;
+            //
+            // Em t=0 não há atividade em andamento que possa se encerrar na fase B
+            if(t > 0)
+            {
+                /// ///////////////////
+                /// // FASE B      ////
+                /// ///////////////////
+                ///
+                cout << "Fase B" << endl;
+                ///
+                // Encontra atividade
+                std::vector<int>::iterator it = find (idleTime.begin(), idleTime.end(), t);
+                //
+                if(it != idleTime.end())
+                {
+                    // Identifica máquina a ser liberada (do atendimento ou da espera)
+                    int mq = it - idleTime.begin();
+                    // Guarda status antigo
+                    int oldStatus = status[mq];
+
+                    cout << "Mq: " << mq << " status: " << status[mq] << " Fila: " << Queue[mq].size() << " idle: " << idleTime[mq] << endl;
+                    //
+                    ////////////////////////////////////////////////
+                    // Verifica se a máquina estava em atendimento
+                    if(oldStatus == 1)
+                    {
+                        // Identifica job
+                        int job = S[mq].back()-1; //S é 1-index
+                        // atualiza step do job
+                        step[job] = step[job]+1;
+                        //
+                        // VERIFICA DELAY E COLOCA MÁQUINA EM ESPERA
+                        float delay = genome.gene(mq*JOB+seized[mq]);
+                        if(delay != 0){
+                            status[mq] = 2;
+                            idleTime[mq] = t + delay;
+                        }
+                        else{
+                           status[mq] = 0;
+                           idleTime[mq] = t;
+                        }
+                        //
+                        /// Verifica se job tem um próximo passo
+                        if(step[job] < MACHINE)
+                        {
+                            //Pega máquina atual
+                            int currentStation = nextStation[job];
+                            // Coloca job na próxima fila já definida
+                            Queue[currentStation].push_back(job);
+                            // Tempo de atendimento do job da fila
+                            processTime[currentStation].push_back(T[job*MACHINE+step[job]]);
+                            //
+                        }
+                        // Atualiza próxima máquina do job (se houver)
+                        if(step[job] < MACHINE-1){
+                            nextStation[job] = R[job*MACHINE+step[job]+1]-1;
+                        }
+                        //
+                    }
+                    else if(oldStatus == 2)
+                    {
+                        // Libera a máquina
+                        status[mq] = 0;
+                        idleTime[mq] = t;
+                    }
+                } // if(it != idleTime.end())
+            } //if(t>0)
+            /// /////////////////////////////////////////////////////
+            /// // FASE C: inicia as atividades por maquina      ////
+            /// /////////////////////////////////////////////////////
+            ///
+            cout << "Fase C" << endl;
+            ///
+            vector<int> numberInQueue;
+            for(int j=0; j<MACHINE; j++)
+            {
+                numberInQueue.push_back(Queue[j].size());
+            }
+            // Percorre as filas das maquinas
+            for(int m=0; m<MACHINE; m++)
+            {
+                // Máquina
+                int mq = m;
+
+                cout << "Mq: " << mq << " status: " << status[mq] << " Fila: " << Queue[mq].size() << " idle: " << idleTime[mq] << endl;
+
+                // Verifica se a maquina está livre
+                if(status[mq] == 0)
+                {
+                    // Número de elementos na fila
+                    int nf = numberInQueue[mq];
+
+                    // Há fila?
+                    if(nf != 0)
+                    {
+                        /// 'Zera' o tamanho da fila visitada (visita apenas uma vez)
+                        numberInQueue[mq] = 0;
+                        /// Atende na base LIFO
+                        time = processTime[mq].back();
+                        theJob = Queue[mq].back();
+                        //
+                        // Inicia operacao do 'theJob' em mq
+                        k++;
+                        // Muda status
+                        status[mq] = 1;
+                        // Atualiza idleTime
+                        idleTime[mq] = t + time;
+                        // Atualiza makespan
+                        if(idleTime[mq] > fitness)
+                            fitness = idleTime[mq];
+                        //
+                        seized[mq] = seized[mq]+1;
+                        //
+                        ////////////////////////////////////
+                        /// Remove job da fila
+                        Queue[mq].pop_back();
+                        /// Remove tempo
+                        processTime[mq].pop_back();
+                        //
+                        // Lista eventos futuros
+                        futureEvents.push_back(idleTime[mq]);
+                        // Coloca job na semente (1-index)
+                        S[mq].push_back(theJob+1);
+                        //
+                        cout << "Programa Job " << theJob << " na Maquina " << mq << endl;
+                        //getchar();
+                    }
+                }
+            }//if m==0
+        }// FECHA WHILE
+        //
+        ////////////////////////////////
+        return fitness;
+}
+/******************************************************************************
+* 	Function: Objective														  *
+*	Short Description: Function called automatically by the GA, where the     *
+*					   chromosome are evaluated (and can be manipulated as	  *
+*					   well.
+*******************************************************************************/
+
+float
+Objective(GAGenome& g)
+{
+    GA2DBinaryStringGenome & genome = (GA2DBinaryStringGenome &)g;
+    vector<int> score(nBestIndividuals);
+    int val = 0;
+    int count=0;
+    unsigned int i, j;
+    int P[MACHINE*JOB];
+    int lin_1, col_1, lin_2, col_2;
+
+    //////////////////////////////////////////////////////////////
+    // Na primeira geração apenas adiciona a semente na população
+    // A aptidão já foi calculada no setup ou na changeSeed
+    //////////////////////////////////////////////////////////////
+    if (primeira_geracao==true)
+    {
+        // Coloca individuo nulo na populacao
+        genome.unset(0,0,genome.width(),genome.height());
+        //
+        primeira_geracao=false;
+
+        // Retorna o valor de aptidao da melhor semente
+        return bestCurrent;
+    }
+    else
+    {
+        /////////////////////////////////////////////
+        /// TESTA O GENOMA
+        /////////////////////////////////////////////
+        //Permuta todas as sementes em S com base no genoma 'genome'
+        vector<int> SS;
+
+        //bestCurrent = ITER;
+        for (int num = 0; num < nBestIndividuals; num++)
+        {
+            // Copia S para uma estrutura temporaria SS que sofre MUDANÇA
+            SS = S[num];
+            //
+//            for(int i=0; i<MACHINE*JOB; i++)
+//            {
+//                cout << SS[i] << ", ";
+//            }
+            // DETERMINA VALOR DA NOVA POSIÇAO PARA INSERCAO
+            vector<int> pos(MACHINE, 0);
+            //cout << endl << "genoma:" << endl;
+
+            for(int j=0; j<genome.height(); j++)
+            {
+                for(int i=JOB; i<2*JOB; i++)
+                {
+                    pos[j] = pos[j] + genome.gene(i,j);
+//                    cout << genome.gene(i,j) << " ";
+                }
+//                cout << endl << endl;
+            }
+//            for(int j=0; j<genome.height(); j++)
+//            {
+//                cout << pos[j] << " ";
+//            }
+//            cout << endl;
+
+            // REALIZA A INSERCÃO
+            for(int j=0; j<genome.height(); j++)
+            {
+                for(int i=0; i<JOB; i++)
+                {
+                    if(genome.gene(i,j) == 1)
+                    {
+                            // nova posição do elemento da posicao i
+                            int new_idx = (j*JOB)+(pos[j] % JOB);
+                            int old_idx = (j*JOB)+i;
+                            //
+                            if(new_idx < old_idx)
+                            {
+                                int val = SS[old_idx];
+                                for(int p=old_idx; p>new_idx;p--)
+                                    SS[p] = SS[p-1];
+                                SS[new_idx] = val;
+                            }
+                            else if(new_idx > old_idx)
+                            {
+                                int val = SS[old_idx];
+                                for(int p=old_idx; p<new_idx;p++)
+                                    SS[p] = SS[p+1];
+                                SS[new_idx] = val;
+                            }
+                    }
+                }
+            }
+            //
+//            for(int i=0; i<MACHINE*JOB; i++)
+//            {
+//                cout << SS[i] << ", ";
+//            }
+//            getchar();
+
+            /////////////////////////////////////////////////////////////////////////////
+            ///   I N T E R P R E T A C A O   O R I G I N A L   D A   S E M E N T E   ///
+            /////////////////////////////////////////////////////////////////////////////
+        	int block = -1;
+            for(int i=0; i<MACHINE*JOB; i++)
+            {
+                int p = (i%JOB)+1;
+                if(p == 1) block++;
+                P[(block*JOB)+SS[i]-1] = p;
+            }
+
+
+            // Apenas o menor score interessa.
+            score[num] = factivel(P,R,1);
+
+            ///////////////////////////////////////////
+            ///       COMPUTA      FACTIVEIS        ///
+            ///////////////////////////////////////////
+            numberOfEvaluations++;
+            if(score[0] < ITER) numberOfFactibles++;
+            ///////////////////////////////////////////
+
+            sort(score.begin(), score.end());
+            if(score[0] < bestCurrent) bestCurrent = score[0];
+            ///////////////////////////////////////////////////
+            // Imprime se melhorou
+            ///////////////////////////////////////////////////
+            if (score[0] <= score_ant)
+            {
+                ofstream fileOut;
+                fileOut.open(ArqBsi.c_str(), ios::out);
+                for (int seq = 0; seq < JOB*MACHINE; seq++)
+                    fileOut << P[seq] << endl;
+
+                fileOut << "\nMakespan da seqüência prioridades acima = " << bestCurrent <<" (UT)"<< endl;
+                fileOut.close();
+                score_ant = score[0];
+                return (float)score[0];
+            }
+        }//fecha for
+     }//fecha else
+     //
+     return (float)score[0];
+}
+/******************************************************************************
+* 	Function: Local Search (multiple seeds)                                    *
+*	Short Description:
+*******************************************************************************/
+void
+localSearch(const GAStatistics &g)
+{
+    // Estruturas temporarias para sementes
+    vector <vector <int> > Stemp(nBestIndividuals);
+    vector<int> SS;
+    vector<int> bestSeed;
+    int val;
+    int P[MACHINE*JOB];
+    int bgn, fnl, pos, job, opr, maq, bgn2, fnl2, pos2, job2, opr2, maq2;
+    //
+    //Faz uma busla local em cada um dos melhores indivíduos
+    //
+    for(int n=0;n < newBestIndividuals; n++)
+    {
+    if(n%5 == 0){
+        //cout << "\nTopList " << n+1 << endl;
+        // Pega o n-esimo individuo da lista dos melhores
+        GA2DBinaryStringGenome & genome = (GA2DBinaryStringGenome &)g.bestIndividual(n);
+        //bestCurrent = ITER;
+        vector<int> score(newBestIndividuals);
+        //cout << genome << endl;
+
+        // Copia S para uma estrutura temporaria que sofrerá permutação
+        SS = S[0];
+        // Permuta os valores de SS baseado no cromossomo gerado pelo AG
+        for(int i=0; i<genome.width(); i++)
+        {
+            for(int j=0; j<genome.height(); j++)
+            {
+                if(genome.gene(i,j) == 1)
+                {
+                    int idx = ((i+1) % JOB);
+                    val = SS[(j*JOB)+i];
+                    SS[(j*JOB)+i] = SS[(j*JOB)+idx];
+                    SS[(j*JOB)+idx] = val;
+                }
+            }
+        }
+        //
+        findCriticalPath(SS);
+        if(n == 0)
+             bestSeed = SS;
+        //
+//        // Calcula score do individuo
+//        int block = -1;
+//        for(int i=0; i<MACHINE*JOB; i++)
+//        {
+//            int p = (i%JOB)+1;
+//            if(p == 1) block++;
+//            P[(block*JOB)+SS[i]-1] = p;
+//        }
+//        // Apenas o menor score interessa.
+//        float escore = factivel(P,R,1);
+//        cout << "Escore do individuo: " << escore << endl;
+//        getchar();
+
+        ////////////////////////////////////////////////////////////////////////
+        // INICIA BUSCA LOCAL NA SEMENTE PERMUTADA PELO INDIVIDUO
+        // BUSCA LOCAL COM BASE NO CAMINHO CRÍTICO DA SEMENTE PERMUTADA
+        ////////////////////////////////////////////////////////////////////////
+        for(int i = 0; i < currentCriticalPath.size() - 2; i++)
+        {
+                ////////////////////////////////////////////////////////////////////////////
+                //identifica a i-ésima operacao do caminho critico
+                job = (int) (currentCriticalPath[i]-1) / MACHINE; //0-index
+                opr = (int) ((currentCriticalPath[i]-1) - job*MACHINE); //0-index
+                // busca na matriz R quem é a maquina
+                maq = R[job * MACHINE + opr]; //1-index
+                // encontra posicao na semente
+                bgn = (maq - 1) * JOB;
+                fnl = bgn + (JOB - 1);
+                pos = std::find(SS.begin()+bgn, SS.begin()+fnl, (job+1)) - SS.begin();
+
+                //cout << endl;
+                //cout << currentCriticalPath[i] << "  " << job+1 << "  " << opr+1 << "  " << maq << endl;
+                //cout << currentCriticalPath[i] << "  " << bgn << "  " << fnl << "  " << pos << endl;
+                //getchar();
+                ////////////////////////////////////////////////////////////////
+                // identifica todas as outras operacoes críticas da mesma maq
+                for(int j = i+1; j < currentCriticalPath.size() - 1; j++)
+                {
+                        //
+                        job2 = (int) (currentCriticalPath[j]-1) / MACHINE; //0-index
+                        opr2 = (int) ((currentCriticalPath[j]-1) - job2*MACHINE); //0-index
+                        // busca na matriz R quem é a maquina
+                        maq2 = R[job2 * MACHINE + opr2]; //1-index
+                        // encontra posicao na semente
+                        bgn2 = (maq2 - 1) * JOB;
+                        fnl2 = bgn2 + (JOB - 1);
+                        pos2 = std::find(SS.begin()+bgn2, SS.begin()+fnl2, (job2+1)) - SS.begin();
+                        //
+                        if(maq2  == maq){ //permuta
+                            //
+                            vector<int> newSS = SS;
+                            std::vector<int> contOcurr(JOB,0);
+                            std::vector<int> contador(JOB,0);
+
+                            val = newSS[pos];
+                            newSS[pos] = newSS[pos2];
+                            newSS[pos2] = val;
+                            //
+                            //////////////////////////////////////////////////////////
+                            // Transforma S em prioridades - interpretacao original //
+                            //////////////////////////////////////////////////////////
+                        	int block = -1;
+                            for(int i=0; i<MACHINE*JOB; i++)
+                            {
+                                int p = (i%JOB)+1;
+                                if(p == 1) block++;
+                                P[(block*JOB)+newSS[i]-1] = p;
+                            }
+
+                            /////////////////////////////////////////////////////////////
+                            // Apenas o menor score interessa
+                            /////////////////////////////////////////////////////////////
+                            score[0] = factivel(P,R,1);
+
+                            ///////////////////////////////////////////
+                            ///       COMPUTA      FACTIVEIS        ///
+                            ///////////////////////////////////////////
+                            numberOfEvaluations++;
+                            if(score[0] < ITER) numberOfFactibles++;
+                            ///////////////////////////////////////////
+                            //
+                            int fitness = (int) score[0];
+                            ////////gera_sequencia////////////////////////////////////////////
+                            //cout << endl << projectDuration(SS) << " " << fitness << endl;
+                            ////////////////////////////////////////////////////
+                            if(fitness < bestCurrent) {
+                                       bestCurrent = fitness;
+                                       //mudo a semente
+                                       bestSeed = newSS;
+                                       cout << "\nAtualiza solucao em Local Search: " << bestCurrent << endl;
+                                       //getchar();
+                            }
+                            //cout << endl;
+                            //cout << currentCriticalPath[j] << "  " << job2+1 << "  " << opr2+1 << "  " << maq2 << endl;
+                            //cout << currentCriticalPath[j] << "  " << bgn2 << "  " << fnl2 << "  " << pos2 << endl;
+                            //getchar();
+
+                         }//Fecha if maq == maq2
+                }
+        }
+    }
+    }
+    //
+    findCriticalPath(S[0]);
+    S[0] = bestSeed;
+    return;
+ }
+/******************************************************************************
+* 	Function: Local Search	(single seed)									  *
+*	Short Description:
+*******************************************************************************/
+void
+localSearch()
+{
+        //cout << "****  EM LOCAL SEARCH *****" << endl;
+        //getchar();
+        vector<int> score(currentCriticalPath.size());
+        int val = 0;
+        int count=0;
+        unsigned int i, j;
+        int maq, maq2, pos, pos2;
+        vector<int> bestInitialSeed;
+
+        int P[MACHINE*JOB];
+
+        /////////////////////////////////////////////
+        /// Permuta semente e calcula aptidao
+        /////////////////////////////////////////////
+        //Permuta todas as sementes em S
+        vector<int> SS;
+        //bestCurrent = ITER;
+  bool melhora = true;
+  while(melhora){
+        // Copia S para uma estrutura temporaria que sofrerá permutação
+        SS = S[0];
+        //findCriticalPath(SS);
+        melhora = false;
+        //
+        //cout << "*" << currentCriticalPath.size() << endl;
+        //getchar();
+        for(int i = 0; i < currentCriticalPath.size() - 1; i++)
+        {
+
+                //
+                ////////////////////////////////////////////////////////////////
+                //identifica a i-ésima operacao do caminho critico
+                int job = (int) (currentCriticalPath[i]-1) / MACHINE; //0-index
+                int opr = (int) ((currentCriticalPath[i]-1) - job*MACHINE); //0-index
+                // busca na matriz R quem é a maquina
+                maq = R[job * MACHINE + opr]; //1-index
+                // encontra posicao na semente
+                int bgn = (maq - 1) * JOB;
+                int fnl = bgn + (JOB - 1);
+                pos = std::find(SS.begin()+bgn, SS.begin()+fnl, (job+1)) - SS.begin();
+
+                //cout << endl;
+                //cout << currentCriticalPath[i] << "  " << job+1 << "  " << opr+1 << "  " << maq << endl;
+                //cout << currentCriticalPath[i] << "  " << bgn << "  " << fnl << "  " << pos << endl;
+                //getchar();
+                ////////////////////////////////////////////////////////////////
+                // identifica todas as outras operacoes críticas da mesma maq
+                for(int j = i+1; j < currentCriticalPath.size() - 1; j++)
+                {
+                        //
+                         int job2 = (int) (currentCriticalPath[j]-1) / MACHINE; //0-index
+                         int opr2 = (int) ((currentCriticalPath[j]-1) - job2*MACHINE); //0-index
+                         // busca na matriz R quem é a maquina
+                         maq2 = R[job2 * MACHINE + opr2]; //1-index
+                         // encontra posicao na semente
+                         int bgn2 = (maq2 - 1) * JOB;
+                         int fnl2 = bgn2 + (JOB - 1);
+                         pos2 = std::find(SS.begin()+bgn2, SS.begin()+fnl2, (job2+1)) - SS.begin();
+
+                        if(maq  == maq2){ //permuta
+                            //
+                            vector<int> newSS = SS;
+
+                            val = newSS[pos];
+                            newSS[pos] = newSS[pos2];
+                            newSS[pos2] = val;
+                            //
+                            /////////////////////////////////////////////////////////////////////////////
+                            ///   I N T E R P R E T A C A O   O R I G I N A L   D A   S E M E N T E   ///
+                            /////////////////////////////////////////////////////////////////////////////
+                            // Transforma S em prioridades
+                        	int block = -1;
+                            for(int i=0; i<MACHINE*JOB; i++)
+                            {
+                                int p = (i%JOB)+1;
+                                if(p == 1) block++;
+                                P[(block*JOB) + newSS[i] - 1] = p;
+                            }
+                            /////////////////////////////////////////////////////////////////////////////
+                            // Apenas o menor score interessa.
+                            score[0] = factivel(P,R,1);
+                            //
+                            ///////////////////////////////////////////
+                            ///       COMPUTA      FACTIVEIS        ///
+                            ///////////////////////////////////////////
+                            numberOfEvaluations++;
+                            if(score[0] < ITER) numberOfFactibles++;
+                            ///////////////////////////////////////////
+                            //
+                            int fitness = score[0];
+                            //cout << endl << scoreTopList[0] << " " << fitness << endl;
+                            if(fitness < bestCurrent) {
+                                       bestCurrent = fitness;
+                                       //mudo a semente
+                                       bestInitialSeed = newSS;
+                                       S[0] = newSS;
+                                       findCriticalPath(S[0]);
+                                       melhora = true;
+                                       cout << "****Atualiza Semente Local Search: " << fitness << endl;
+                                       //getchar();
+                            }
+                         }
+                }
+        }
+//        if(melhora == true) {
+//                   S[0] = bestInitialSeed;
+//                   findCriticalPath(S[0]);
+//        }
+
+    }//fecha while
+        return;
+}
+////////////////////////////////////////////////////////////////////////////////
+// cpBasedSeedGA()
+////////////////////////////////////////////////////////////////////////////////
+void cpBasedSeedGA()
+{
+        //
+        int cp_SIZE = currentCriticalPath.size();
+        int height = 1;
+        int width  = cp_SIZE - 1;
+        int nLocalBestIndividuals = 1;
+
+        GA2DBinaryStringGenome genome(width, height, Objective);
+
+        GASteadyStateGA ga(genome);
+        ga.minimize();
+
+
+        ga.populationSize(100);
+        ga.pReplacement(0.80);
+        ga.nGenerations(49);
+        ga.pMutation(0.01);
+        ga.pCrossover(0.90);
+        ga.scoreFilename(ArqCon.c_str());
+        ga.scoreFrequency(1);
+        ga.selectScores(GAStatistics::Minimum);
+        ga.flushFrequency(1);
+
+        ga.nBestGenomes(nLocalBestIndividuals);
+
+        ga.pConvergence(1);
+        ga.nConvergence((int)MACHINE*JOB);
+        ga.terminator(GAGeneticAlgorithm::TerminateUponConvergence);
+
+
+        primeira_geracao=true;
+        cpBasedSeed = true;
+
+        ga.initialize();
+        //
+        while (!ga.done())
+        {
+            cout <<"\rCritical Path  " << 1 << " (of " << 1 <<
+            ") and Generation " << ga.generation()+2;
+
+            ++ga;
+            //
+        }
+        cpBasedSeed = false;
+}

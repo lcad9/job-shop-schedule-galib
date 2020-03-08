@@ -1,0 +1,3156 @@
+# depslib dependency file v1.0
+1379875604 source:c:\scheduling\fact_la02.c
+	"fact_LA02.h"
+	<stdio.h>
+	<stdlib.h>
+
+1395226864 c:\scheduling\fact_la02.h
+
+1395226875 source:c:\scheduling\la02.cpp
+	"fact_LA02.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<sstream>
+	<fstream>
+	<math.h>
+	<ga/ga.h>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+
+1173266204 c:\ga\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323885000 c:\ga\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\ga\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\ga\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\ga\ga\gaid.h
+
+1173266204 c:\ga\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\gatypes.h
+
+1173266204 c:\ga\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173266204 c:\ga\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\ga\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\gaevaldata.h
+
+1173266204 c:\ga\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\ga\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\ga\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\ga\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\ga\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\ga\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\ga\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\ga\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\ga\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 c:\ga\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\ga\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\ga\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\ga\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173266204 c:\ga\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173266204 c:\ga\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\ga\ga\gaarray.h
+
+1173266204 c:\ga\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 c:\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 c:\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\gamask.h
+	<string.h>
+
+1173266204 c:\ga\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173266204 c:\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173266204 c:\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173266204 c:\ga\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173266204 c:\ga\ga\galistbase.h
+	<ga/GANode.h>
+
+1173266204 c:\ga\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 c:\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 c:\ga\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173266204 c:\ga\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173266204 c:\ga\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173266204 c:\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 c:\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1173266204 c:\galib\galib247\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323885000 c:\galib\galib247\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\galib\galib247\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\galib\galib247\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\galib\galib247\ga\gaid.h
+
+1173266204 c:\galib\galib247\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\galib\galib247\ga\gatypes.h
+
+1173266204 c:\galib\galib247\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173266204 c:\galib\galib247\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\galib\galib247\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\galib\galib247\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\galib\galib247\ga\gaevaldata.h
+
+1173266204 c:\galib\galib247\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\galib\galib247\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\galib\galib247\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\galib\galib247\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\galib\galib247\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\galib\galib247\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\galib\galib247\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\galib\galib247\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\galib\galib247\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 c:\galib\galib247\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\galib\galib247\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\galib\galib247\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\galib\galib247\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173266204 c:\galib\galib247\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173266204 c:\galib\galib247\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\galib\galib247\ga\gaarray.h
+
+1173266204 c:\galib\galib247\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 c:\galib\galib247\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 c:\galib\galib247\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\galib\galib247\ga\gamask.h
+	<string.h>
+
+1173266204 c:\galib\galib247\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173266204 c:\galib\galib247\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\galib\galib247\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173266204 c:\galib\galib247\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\galib\galib247\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173266204 c:\galib\galib247\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173266204 c:\galib\galib247\ga\galistbase.h
+	<ga/GANode.h>
+
+1173266204 c:\galib\galib247\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\galib\galib247\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 c:\galib\galib247\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 c:\galib\galib247\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173266204 c:\galib\galib247\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173266204 c:\galib\galib247\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173266204 c:\galib\galib247\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 c:\galib\galib247\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1379875604 source:c:\users\crossover\my documents\programacao\codeblocks\scheduling\fact_la02.c
+	"fact_LA02.h"
+	<stdio.h>
+	<stdlib.h>
+
+1395226864 c:\users\crossover\my documents\programacao\codeblocks\scheduling\fact_la02.h
+
+1395529466 source:c:\users\crossover\my documents\programacao\codeblocks\scheduling\la02.cpp
+	"fact_LA02.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<sstream>
+	<fstream>
+	<math.h>
+	<ga/ga.h>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323888600 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaid.h
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gatypes.h
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaevaldata.h
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaarray.h
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\galistbase.h
+	<ga/GANode.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 y:\documents\programacao\codeblocks\scheduling\biblioteca_galib\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1395533759 source:c:\users\crossover\my documents\programacao\codeblocks\scheduling\varnormal.cpp
+	<cstdlib>
+	<ctime>
+	<iostream>
+	<math.h>
+	<stdlib.h>
+
+1396105066 source:y:\documents\programacao\codeblocks\scheduling\fact_la02.c
+	"fact_LA02.h"
+	<stdio.h>
+	<stdlib.h>
+
+1396104183 y:\documents\programacao\codeblocks\scheduling\fact_la02.h
+
+1396104168 source:y:\documents\programacao\codeblocks\scheduling\varnormal.cpp
+	<cstdlib>
+	<ctime>
+	<iostream>
+	<math.h>
+	<stdlib.h>
+
+1396104719 source:y:\documents\programacao\codeblocks\scheduling\la02.cpp
+	"fact_LA02.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<ga/ga.h>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1405709086 source:c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.c
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405709100 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.h
+
+1413678144 source:c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\la1.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaid.h
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatypes.h
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaevaldata.h
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\users\flavio.grassi\desktop\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1414526984 source:f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.c
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+
+1414526988 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.h
+
+1414699860 source:f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\la1_lista.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<math.h>
+	<ga/ga.h>
+	<ga/std_stream.h>
+	<fstream>
+	<iostream>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323892200 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaid.h
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatypes.h
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaarray.h
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galistbase.h
+	<ga/GANode.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galist.c
+	<ga/GAList.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatree.c
+	<ga/GATree.h>
+
+1173269804 f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1405712686 source:i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.c
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.h
+
+1415912900 source:i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\la1_lista.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<math.h>
+	<ga/ga.h>
+	<ga/std_stream.h>
+	<fstream>
+	<iostream>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323892200 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaid.h
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatypes.h
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaarray.h
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galistbase.h
+	<ga/GANode.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galist.c
+	<ga/GAList.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatree.c
+	<ga/GATree.h>
+
+1173269804 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1413681746 source:f:\jssp\projeto_scheduling_codeblocks para windows\scheduling\la1.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1416088690 source:i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\la1.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1405712686 source:i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 i:\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la2.h
+
+1405712686 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.c
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\fact_la1.h
+
+1418406994 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\la1.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1421241168 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\fact_la1.c
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\fact_la1.h
+
+1421202107 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\la1.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1421241168 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la1.c
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la1.h
+
+1421245044 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\la1.cpp
+	"fact_LA1.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1405712686 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la22.c
+	"fact_LA22.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la22.h
+
+1405712686 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la2.h
+
+1421419618 source:c:\users\fabio\documents\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1405712686 source:c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405712700 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la2.h
+
+1421427201 source:c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\fabio\documents\projects\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1405709086 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1405709100 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\fact_la2.h
+
+1502132923 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<windows.h>
+	<shlobj.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323888600 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaid.h
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gatypes.h
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaevaldata.h
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1512428024 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1512428022 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\fact_la2.h
+
+1512428024 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<list>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<ga/GARealGenome.h>
+	<ga/GARealGenome.C>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaarray.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1509998768 source:c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1509483275 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\fact_la2.h
+
+1512230533 source:c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<list>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<ga/GARealGenome.h>
+	<ga/GARealGenome.C>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323895800 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gaarray.h
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173269804 c:\users\luisc\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_full_v1.1\biblioteca_galib\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1512430596 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1512430599 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\fact_la2.h
+
+1512430120 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<list>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<ga/GARealGenome.h>
+	<ga/GARealGenome.C>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gaarray.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay\biblioteca_galib\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1517341691 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1517341691 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\fact_la2.h
+
+1517338011 source:c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<list>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<ga/GARealGenome.h>
+	<ga/GARealGenome.C>
+	<windows.h>
+	<shlobj.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaid.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gatypes.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaevaldata.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gaarray.h
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173269804 c:\users\fabio\dropbox\jssp\projeto_scheduling_codeblocks para windows\scheduling_delay_v1\biblioteca_galib\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1551585511 source:c:\users\luisc\desktop\scheduling_delay_v1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1551584891 c:\users\luisc\desktop\scheduling_delay_v1\fact_la2.h
+
+1557290134 source:c:\users\luisc\desktop\scheduling_delay_v1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<list>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<ga/GARealGenome.h>
+	<ga/GARealGenome.C>
+	<windows.h>
+	<shlobj.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1323892200 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaid.h
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gatypes.h
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaevaldata.h
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gaarray.h
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1173266204 c:\users\luisc\desktop\scheduling_delay_v1\biblioteca_galib\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1578078675 source:c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\fact_la2.c
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+
+1578190500 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\fact_la2.h
+
+1578190697 source:c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\la2.cpp
+	"fact_LA2.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	<string>
+	<cstring>
+	<sstream>
+	<fstream>
+	<math.h>
+	<algorithm>
+	<queue>
+	<iostream>
+	<cstdlib>
+	<set>
+	<list>
+	<ga/std_stream.h>
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<ga/GARealGenome.h>
+	<ga/GARealGenome.C>
+	<windows.h>
+	<shlobj.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaid.h
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gatypes.h
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaevaldata.h
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gaarray.h
+
+1578078678 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1578078677 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\gamask.h
+	<string.h>
+
+1578078676 c:\users\luisc\dropbox\doutorado - luis carlos\pesquisa code\scheduling_delay_v1\biblioteca_galib\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
