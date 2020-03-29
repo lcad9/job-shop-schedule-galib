@@ -22,7 +22,7 @@ int factivel(int *vPriorities, int *vSequences, int iPrioMode);
 #define _FACT_
 
 //Defines
-#define PROBLEMA        "la02"
+#define PROBLEMA        "la03"
 #define MACHINE			5
 #define JOB    			10
 #define SEQUENCE	    JOB

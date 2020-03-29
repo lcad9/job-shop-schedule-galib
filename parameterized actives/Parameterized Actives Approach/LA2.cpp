@@ -221,14 +221,14 @@ vector < storeProcess > storeStack;
 //int R[JOB * MACHINE] = {0,1,2,3,4,5,6,7,8,9,0,2,4,9,3,1,6,5,7,8,1,0,3,2,8,5,7,6,9,4,1,2,0,4,6,8,7,3,9,5,2,0,1,5,3,4,8,7,9,6,2,1,5,3,8,9,0,6,4,7,1,0,3,2,6,5,9,8,7,4,2,0,1,5,4,6,8,9,7,3,0,1,3,5,2,9,6,7,4,8,1,0,2,6,8,9,5,3,4,7};
 //int MAKESPAN = 500
 
-int R[MACHINE*JOB]= {1,4,2,5,3,5,3,1,2,4,2,3,5,1,4,3,2,5,1,4,5,1,4,3,2,2,1,5,4,3,5,2,4,1,3,2,1,3,4,5,5,1,3,2,4,5,3,2,4,1};
-int T[JOB*MACHINE]={20, 87, 31, 76, 17,25, 32, 24, 18, 81,72, 23, 28, 58, 99,86, 76, 97, 45, 90,27, 42, 48, 17, 46,67, 98, 48, 27, 62,28, 12, 19, 80, 50,63, 94, 98, 50, 80,14, 75, 50, 41, 55,72, 18, 37, 79, 61};
-int MAKESPAN = 655;
+//int R[MACHINE*JOB]= {1,4,2,5,3,5,3,1,2,4,2,3,5,1,4,3,2,5,1,4,5,1,4,3,2,2,1,5,4,3,5,2,4,1,3,2,1,3,4,5,5,1,3,2,4,5,3,2,4,1};
+//int T[JOB*MACHINE]={20, 87, 31, 76, 17,25, 32, 24, 18, 81,72, 23, 28, 58, 99,86, 76, 97, 45, 90,27, 42, 48, 17, 46,67, 98, 48, 27, 62,28, 12, 19, 80, 50,63, 94, 98, 50, 80,14, 75, 50, 41, 55,72, 18, 37, 79, 61};
+//int MAKESPAN = 655;
 
 //LA3
-//int R[MACHINE*JOB]={2,3,1,5,4,3,2,1,5,4,3,4,5,1,2,5,1,3,2,4,5,1,2,4,3,5,1,2,3,4,4,3,1,5,2,5,2,1,3,4,5,1,4,3,2,5,2,1,3,4};
-//int T[JOB*MACHINE]={23, 45, 82, 84, 38,21, 29, 18, 41, 50,38, 54, 16, 52, 52,37, 54, 74, 62, 57,57, 81, 61, 68, 30,81, 79, 89, 89, 11,33, 20, 91, 20, 66,24, 84, 32, 55, 8,56, 7, 54, 64, 39,40, 83, 19, 8, 7};
-//int MAKESPAN = 597;
+int R[MACHINE*JOB]={2,3,1,5,4,3,2,1,5,4,3,4,5,1,2,5,1,3,2,4,5,1,2,4,3,5,1,2,3,4,4,3,1,5,2,5,2,1,3,4,5,1,4,3,2,5,2,1,3,4};
+int T[JOB*MACHINE]={23, 45, 82, 84, 38,21, 29, 18, 41, 50,38, 54, 16, 52, 52,37, 54, 74, 62, 57,57, 81, 61, 68, 30,81, 79, 89, 89, 11,33, 20, 91, 20, 66,24, 84, 32, 55, 8,56, 7, 54, 64, 39,40, 83, 19, 8, 7};
+int MAKESPAN = 597;
 
 ////////////////////////////////////////////////////////
 //LA4
@@ -643,7 +643,6 @@ void return_seed(vector<int> &seed, GAGenome &g)
     //cout << "Fitness antes de refinar: " << score_temp << endl;
 
     refinaIndividuos();
-    //cout << "\n";
     //cout << "\rMelhor MK encontrado: " << score_temp << "Solucoes testadas: " << ++contTotal;
    //cout << "Fitness apos de refinar: " << score_temp << endl;
 
@@ -651,7 +650,6 @@ void return_seed(vector<int> &seed, GAGenome &g)
         cout << "Chegou no makespan" << endl;
         getchar();
     }
-    //cout << "\rNumero de soluções encontras: " << ++contSolucao;
 
     if (menorEncontrado > score_temp)
     {
@@ -668,7 +666,7 @@ void return_seed(vector<int> &seed, GAGenome &g)
         goto backtracking;
     }
 
-    cout << "\nMedia das solucoes encontradas: " << somaTotal / contTotal << endl;
+    //cout << "\nMedia das solucoes encontradas: " << somaTotal / contTotal << endl;
     cout << "\nMenor valor encontrado: " << menorEncontrado << endl;
 
     for (int j = 0; j < JOB * MACHINE; j++)
